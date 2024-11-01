@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #f6f7f8;
+  touch-action: manipulation; /* Prevents double-tap zoom */
+  -webkit-user-select: none; /* Prevents text selection on iOS */
+  min-height: 100vh; /* Ensures body occupies full height */
+  margin: 0;
+}
+
+.added {
+  animation: pulse 0.5s;
+  background-color: #4caf50; /* Temporary color for animation */
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
+
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  cursor: grab;
+  user-select: none; /* Disables text selection */
+}
+.scroll-container:active {
+  cursor: grabbing;
+}
+
+.increment-item-btn,
+.decrement-item-btn {
+  @apply bg-green-500 text-white border-none py-4 px-5 text-lg rounded transition duration-300; /* Tailwind classes */
+  min-width: 60px; /* Set a minimum width */
+  min-height: 60px; /* Set a minimum height */
+}
+
+/* Hover effects for navigation items */
+#navegacao-artesanal:hover,
+#navegacao-trioartesanal:hover,
+#navegacao-tradicional:hover,
+#navegacao-triotradicional:hover,
+#navegacao-burgerfrango:hover,
+#navegacao-trioburgerfrango:hover,
+#navegacao-crepe:hover,
+#navegacao-hotdog:hover,
+#navegacao-triohotdog:hover,
+#navegacao-vegetariano:hover,
+#navegacao-batata:hover,
+#navegacao-sucocreme:hover,
+#navegacao-refri:hover {
+  /* Add hover styles here if needed */
+}
+
+/* Active class for navigation links */
+.active {
+  background-color: #b3b2b2; /* Background color for active link */
+}

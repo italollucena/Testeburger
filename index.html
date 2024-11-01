@@ -1,0 +1,2571 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&family=Poppins:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- META TAG OG -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Bassi Burger - A melhor hamburgueria!" />
+    <meta
+      property="og:image"
+      content="http://192.168.1.7:5500/assets/hamb-1.png"
+    />
+    <!-- URL DA IMAGEM PRINCIPAL -->
+    <meta property="og:description" content="O melhor hamburquer" />
+    <meta property="og:site_name" content="DevBurguer" />
+
+    <link rel="stylesheet" href="styles/output.css" />
+    <title>Bassi Burger - A melhor hamburgueria!</title>
+  </head>
+
+  <body>
+    <!-- Carrinho -->
+    <div
+      id="cart-icon"
+      style="
+        top: calc(88vh - 100px);
+        right: 5px;
+        background-color: #602902c3;
+        z-index: 10; /* Ajuste o z-index para um valor menor */
+        position: fixed;
+        transition: top 0.3s ease;
+      "
+      class="p-4 rounded-full shadow-lg cursor-pointer text-1x1 text-white"
+    >
+      <i class="fa fa-shopping-cart"></i> <span id="cart-count">0</span>
+    </div>
+
+    <!-- HEADER -->
+    <header class="w-full h-[420px] bg-zinc-900 bg-home bg-cover bg-center">
+      <div class="w-full h-full flex flex-col justify-center items-center">
+        <img
+          src="./assets/logo.png"
+          alt="Logo DevBurguer"
+          class="w-34 h-34 rounded-full shadow-lg hover:scale-110 duration-200"
+        />
+        <h1 class="text-4xl mt-4 mb-2 font-bold text-white">Burguer</h1>
+        <span class="text-white font-medium">Endereço</span>
+        <div class="bg-green-600 px-4 py-1 rounded-lg mt-5" id="date-span">
+          <span class="text-white font-medium"
+            >De terça a sábado - das 18h às 23h</span
+          >
+        </div>
+      </div>
+    </header>
+    <!-- FIM HEADER -->
+
+    <h2
+      id="artensal"
+      class="text-2xl md:text-3xl font-bold text-center mt-9 mb-6"
+    >
+      Burger Artesanal:
+    </h2>
+
+    <!-- INICIO DE MENU -->
+    <div id="menu">
+      <main
+        class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16"
+      >
+        <!-- PRODUTO ITEM -->
+        <div class="border p-4 rounded-md shadow-md">
+          <div class="flex gap-7">
+            <img
+              src="./assets/LAGUNA.jpg"
+              alt="LAGUNA"
+              class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+            />
+            <div>
+              <p class="font-bold">HAMBURGUER</p>
+              <p class="text-sm">
+                Lagoa de cheddar cremoso, bacon crocante, suculenta carne
+                artesanal de 120g, duas fatias de cheddar e maionese caseira,
+                servido no pão brioche
+              </p>
+              <div class="flex items-center gap-2 justify-between mt-3">
+                <p class="font-bold text-lg">R$ 29,90</p>
+                <button
+                  class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                  data-name="HAMBURGUER"
+                  data-price="29.9"
+                  style="touch-action: manipulation"
+                >
+                  <i class="fa fa-cart-plus text-lg text-white"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- FIM PRODUTO ITEM -->
+
+        <!-- PRODUTO ITEM -->
+        <div class="border p-4 rounded-md shadow-md">
+          <div class="flex gap-7">
+            <img
+              src="./assets/POTENZA.jpg"
+              alt="POTENZA"
+              class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+            />
+            <div>
+              <p class="font-bold">HAMBURGUER</p>
+              <p class="text-sm">
+                Duas suculentas carnes de hambúrguer artesanal de 120g, duas
+                fatias de queijo cheddar, quatro fatias de bacon e muita
+                maionese caseira, servido no pão brioche.
+              </p>
+              <div class="flex items-center gap-2 justify-between mt-3">
+                <p class="font-bold text-lg">R$ 26,90</p>
+                <button
+                  class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                  data-name="HAMBURGUER"
+                  data-price="26.90"
+                  style="touch-action: manipulation"
+                >
+                  <i class="fa fa-cart-plus text-lg text-white"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- FIM PRODUTO ITEM -->
+
+        <!-- PRODUTO ITEM -->
+        <div class="border p-4 rounded-md shadow-md">
+          <div class="flex gap-7">
+            <img
+              src="./assets/MILANO.jpg"
+              alt="Hamburguer Salad"
+              class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+            />
+            <div>
+              <p class="font-bold">HAMBURGUER</p>
+              <p class="text-sm">
+                Suculenta carne artesanal de 120g, bacon, cheddar, 2 onion
+                rings, alface americana, maionese defumada especial, servido no
+                pão brioche.
+              </p>
+              <div class="flex items-center gap-2 justify-between mt-3">
+                <p class="font-bold text-lg">R$ 19,90</p>
+                <button
+                  class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                  data-name="HAMBURGUER"
+                  data-price="19,90"
+                  style="touch-action: manipulation"
+                >
+                  <i class="fa fa-cart-plus text-lg text-white"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- FIM PRODUTO ITEM -->
+
+        <!-- PRODUTO ITEM -->
+        <div class="border p-4 rounded-md shadow-md">
+          <div class="flex gap-7">
+            <img
+              src="./assets/NAPOLES.jpg"
+              alt="NÁPOLES"
+              class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+            />
+            <div>
+              <p class="font-bold">HAMBURGUER</p>
+              <p class="text-sm">
+                Suculenta carne artesanal de 120g, mussarela, bacon, cebola
+                crispy, alface americana e maionese caseira, servido no pão
+                brioche.
+              </p>
+              <div class="flex items-center gap-2 justify-between mt-3">
+                <p class="font-bold text-lg">R$ 19,90</p>
+                <button
+                  class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                  data-name="HAMBURGUER"
+                  data-price="19.90"
+                  style="touch-action: manipulation"
+                >
+                  <i class="fa fa-cart-plus text-lg text-white"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- FIM PRODUTO ITEM -->
+
+        <!-- PRODUTO ITEM -->
+        <div class="border p-4 rounded-md shadow-md">
+          <div class="flex gap-7">
+            <img
+              src="./assets/MILANODUPLO.jpg"
+              alt="NÁPOLES"
+              class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+            />
+            <div>
+              <p class="font-bold">HAMBURGUER</p>
+              <p class="text-sm">
+                2 Suculentas carnes artesanais de 120g, 4 anéis de cebola, 4
+                fatis de bacon, 2 fatias de cheddar, alface americana, maionese
+                defumada especial, servido no pão brioche
+              </p>
+              <div class="flex items-center gap-2 justify-between mt-3">
+                <p class="font-bold text-lg">R$ 32,90</p>
+                <button
+                  class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                  data-name="HAMBURGUER"
+                  data-price="32.90"
+                  style="touch-action: manipulation"
+                >
+                  <i class="fa fa-cart-plus text-lg text-white"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- FIM PRODUTO ITEM -->
+
+        <!-- PRODUTO ITEM -->
+        <div class="border p-4 rounded-md shadow-md">
+          <div class="flex gap-7">
+            <img
+              src="./assets/BAMBINO.jpg"
+              alt="BAMBINO"
+              class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+            />
+            <div>
+              <p class="font-bold">HAMBURGUER</p>
+              <p class="text-sm">
+                Suculenta carne artesanal de 120g, duas fatias de cheddar e
+                maionese caseira, servido no pão brioche.
+              </p>
+              <div class="flex items-center gap-2 justify-between mt-3">
+                <p class="font-bold text-lg">R$ 17,90</p>
+                <button
+                  class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                  data-name="HAMBURGUER"
+                  data-price="17.90"
+                  style="touch-action: manipulation"
+                >
+                  <i class="fa fa-cart-plus text-lg text-white"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- FIM PRODUTO ITEM -->
+
+        <!-- PRODUTO ITEM -->
+        <div class="border p-4 rounded-md shadow-md">
+          <div class="flex gap-7">
+            <img
+              src="./assets/FLORENÇA.jpg"
+              alt="FLORENÇA"
+              class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+            />
+            <div>
+              <p class="font-bold">HAMBURGUER</p>
+              <p class="text-sm">
+                Suculenta carne artesanal de 120g, mussarela, bacon, abacaxi
+                grelhado, alface americana e maionese da casa, servido no pão
+                brioche.
+              </p>
+              <div class="flex items-center gap-2 justify-between mt-3">
+                <p class="font-bold text-lg">R$ 19,90</p>
+                <button
+                  class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                  data-name="HAMBURGUER"
+                  data-price="19.90"
+                  style="touch-action: manipulation"
+                >
+                  <i class="fa fa-cart-plus text-lg text-white"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- FIM PRODUTO ITEM -->
+
+        <!-- PRODUTO ITEM -->
+        <div class="border p-4 rounded-md shadow-md">
+          <div class="flex gap-7">
+            <img
+              src="./assets/ITALYCHEESE.jpg"
+              alt="ITALY CHEESE"
+              class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+            />
+            <div>
+              <p class="font-bold">HAMBURGUER</p>
+              <p class="text-sm">
+                Suculenta carne artesanal de 120g, bacon, generosa fatia de
+                mussarela empanada, alface americana e maionese caseira, servido
+                no pão brioche.
+              </p>
+              <div class="flex items-center gap-2 justify-between mt-3">
+                <p class="font-bold text-lg">R$ 25,90</p>
+                <button
+                  class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                  data-name="HAMBURGUER"
+                  data-price="25.90"
+                  style="touch-action: manipulation"
+                >
+                  <i class="fa fa-cart-plus text-lg text-white"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- FIM PRODUTO ITEM -->
+
+        <!-- PRODUTO ITEM -->
+        <div class="border p-4 rounded-md shadow-md">
+          <div class="flex gap-7">
+            <img
+              src="./assets/ROMA.jpg"
+              alt="ROMA"
+              class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+            />
+            <div>
+              <p class="font-bold">HAMBURGUER</p>
+              <p class="text-sm">
+                2 suculentas carnes de hambúrguer artesanal de 120g, generosa
+                fatia de mussarela empanada, 4 fatias de queijo cheddar, 4
+                fatias de bacon, picles artesanal e maionese caseira, servido no
+                pão brioche.
+              </p>
+              <div class="flex items-center gap-2 justify-between mt-3">
+                <p class="font-bold text-lg">R$ 39,90</p>
+                <button
+                  class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                  data-name="HAMBURGUER"
+                  data-price="39.90"
+                  style="touch-action: manipulation"
+                >
+                  <i class="fa fa-cart-plus text-lg text-white"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- FIM PRODUTO ITEM -->
+
+        <!-- PRODUTO ITEM -->
+        <div class="border p-4 rounded-md shadow-md">
+          <div class="flex gap-7">
+            <img
+              src="./assets/VENEZA.jpg"
+              alt="VENEZA"
+              class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+            />
+            <div>
+              <p class="font-bold">HAMBURGUER</p>
+              <p class="text-sm">
+                Suculenta carne artesanal de 120g, mussarela, bacon, cebola
+                caramelizada, picles artesanal, alface americana e maionese
+                especial servido no pão brioche.
+              </p>
+              <div class="flex items-center gap-2 justify-between mt-3">
+                <p class="font-bold text-lg">R$ 19,90</p>
+                <button
+                  class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                  data-name="HAMBURGUER"
+                  data-price="19.90"
+                  style="touch-action: manipulation"
+                >
+                  <i class="fa fa-cart-plus text-lg text-white"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- FIM PRODUTO ITEM -->
+      </main>
+      <br />
+
+      <!-- COMEÇO TRIO Artesanal -->
+      <div class="mx-auto max-w-7xl px-2 my-2">
+        <h2
+          id="trioartesanal"
+          class="text-2xl md:text-3xl font-bold text-center mt-9 mb-6"
+        >
+          Trio Burger Artesanal:
+        </h2>
+      </div>
+
+      <!-- INICIO DE MENU -->
+      <div id="menu">
+        <main
+          class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16"
+        >
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/ITALYCHEESE.jpg"
+                alt="TRIO ITALY CHEESE"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">HAMBURGUER</p>
+                <p class="font-bold">
+                  Batata frita pequena e Refrigerante de 200ml.
+                </p>
+                <p class="text-sm">
+                  Suculenta carne artesanal de 120g, bacon, generosa fatia de
+                  mussarela empanada, alface americana e maionese caseira,
+                  servido no pão brioche.
+                </p>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 32,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="HAMBURGUER"
+                    data-price="32.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/POTENZA.jpg"
+                alt="TRIO POTENZA"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">HAMBURGUER</p>
+                <p class="font-bold">
+                  Batata frita pequena e Refrigerante de 200ml.
+                </p>
+                <p class="text-sm">
+                  Duas suculentas carnes de hambúrguer artesanal de 120g, duas
+                  fatias de queijo cheddar, quatro fatias bacon e muita maionese
+                  caseira, servido no pão brioche.
+                </p>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 33,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="HAMBURGUER"
+                    data-price="33.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/TRIOMILANO.jpg"
+                alt="TRIO MILANO"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">HAMBURGUER</p>
+                <p class="font-bold">
+                  Batata frita pequena e Refrigerante de 200ml.
+                </p>
+                <p class="text-sm">
+                  Suculenta carne artesanal de 120g, bacon, cheddar, 2 onion
+                  rings, alface americana, maionese defumada especial, servido
+                  no pão brioche.
+                </p>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 26,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="HAMBURGUER"
+                    data-price="26.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/TRIONAPOLES.jpg"
+                alt="TRIO NÁPOLES"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">HAMBURGUER</p>
+                <p class="font-bold">
+                  Batata frita pequena e Refrigerante de 200ml.
+                </p>
+                <p class="text-sm">
+                  Suculenta carne artesanal de 120g, mussarela, bacon, cebola
+                  crispy, alface americana e maionese caseira, servido no pão
+                  brioche.
+                </p>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 26,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="HAMBURGUER"
+                    data-price="26.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/TRIO FLORENÇA.jpg"
+                alt="TRIO FLORENÇA"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">HAMBURGUER</p>
+                <p class="font-bold">
+                  Batata frita pequena e Refrigerante de 200ml.
+                </p>
+                <p class="text-sm">
+                  Suculenta carne artesanal de 120g, mussarela, bacon, abacaxi
+                  grelhado, alface americana e maionese da casa, servido no pão
+                  brioche.
+                </p>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 26,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="HAMBURGUER"
+                    data-price="26.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/BAMBINO.jpg"
+                alt="TRIO BAMBINO"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">HAMBURGUER</p>
+                <p class="font-bold">
+                  Batata frita pequena e Refrigerante de 200ml.
+                </p>
+                <p class="text-sm">
+                  Suculenta carne artesanal de 120g, duas fatias de cheddar e
+                  maionese caseira, servido no pão brioche.
+                </p>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 24,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="HAMBURGUER"
+                    data-price="24.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/MILANODUPLO.jpg"
+                alt="TRIO MILANO DUPLO"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">HAMBURGUER</p>
+                <p class="font-bold">
+                  Batata frita pequena e Refrigerante de 200ml.
+                </p>
+                <p class="text-sm">
+                  2 Suculentas carnes artesanais de 120g, 4 anéis de cebola, 4
+                  fatis de bacon, 2 fatias de cheddar, alface americana,
+                  maionese defumada especial, servido no pão brioche.
+                </p>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 39,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="HAMBURGUER"
+                    data-price="39.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/ROMA.jpg"
+                alt="TRIO ROMA"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">HAMBURGUER</p>
+                <p class="font-bold">
+                  Batata frita pequena e Refrigerante de 200ml.
+                </p>
+                <p class="text-sm">
+                  2 suculentas carnes de hambúrguer artesanal de 120g, mussarela
+                  empanada, 4 fatias de queijo cheddar, 4 fatias de bacon,
+                  picles artesanal e maionese caseira, servido no pão brioche.
+                </p>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 46,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="HAMBURGUER"
+                    data-price="46.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/TRIO VENEZA.jpg"
+                alt="TRIO VENEZA"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">HAMBURGUER</p>
+                <p class="font-bold">
+                  Batata frita pequena e Refrigerante de 200ml.
+                </p>
+                <p class="text-sm">
+                  Suculenta carne artesanal de 120g, mussarela, bacon, cebola
+                  caramelizada, picles artesanal, alface americana e maionese
+                  especial servido no pão brioche.
+                </p>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 26,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="HAMBURGUER"
+                    data-price="26.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+        </main>
+      </div>
+      <br />
+      <!-- FIM TRIO Artesanel -->
+
+      <!-- Começo Burger Tradicional -->
+      <div class="mx-auto max-w-7xl px-2 my-2">
+        <h2
+          id="tradicional"
+          class="text-2xl md:text-3xl font-bold text-center mt-9 mb-6"
+        >
+          Burger Tradicional:
+        </h2>
+      </div>
+
+      <!-- INICIO DE MENU -->
+      <div id="menu">
+        <main
+          class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16"
+        >
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/FIORI.jpg"
+                alt="FIORI"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">HAMBURGUER</p>
+                <p class="text-sm">
+                  Hambúrguer de carne, mussarela, presunto, tomate, alface
+                  americana e maionese especial servido no pão brioche.
+                </p>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 11,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="HAMBURGUER"
+                    data-price="11.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/COLISEU.jpg"
+                alt="COLISEU"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">HAMBURGUER</p>
+                <p class="text-sm">
+                  Hambúrguer de carne, mussarela, presunto, calabresa, ovo,
+                  bacon, tomate, alface americana e maionese especial servido no
+                  pão brioche.
+                </p>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 13,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="HAMBURGUER"
+                    data-price="13.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/COLISEU LOTADO.jpg"
+                alt="COLISEU LOTADO!"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">HAMBURGUER</p>
+                <p class="text-sm">
+                  Hambúrguer de carne, filé de frango, salsicha, presunto,
+                  calabresa, ovo, bacon, mussarela, tomate, alface americana e
+                  maionese especial servido no pão brioche.
+                </p>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 19,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="HAMBURGUER"
+                    data-price="19.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+          <!-- Fim Burger Tradicional -->
+        </main>
+      </div>
+      <br />
+
+      <!-- Começo Trio Burger Tradicional -->
+      <div class="mx-auto max-w-7xl px-2 my-2">
+        <h2
+          id="triotradicional"
+          class="text-2xl md:text-3xl font-bold text-center mt-9 mb-6"
+        >
+          Trio Burger Tradicional:
+        </h2>
+      </div>
+
+      <!-- INICIO DE MENU -->
+      <div id="menu">
+        <main
+          class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16"
+        >
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/FIORI.jpg"
+                alt="TRIO FIORI"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">HAMBURGUER</p>
+                <p class="font-bold">
+                  Batata frita pequena e Refrigerante de 200ml.
+                </p>
+                <p class="text-sm">
+                  Hambúrguer de carne, mussarela, presunto, tomate, alface
+                  americana e maionese especial servido no pão brioche.
+                </p>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 18,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="HAMBURGUER"
+                    data-price="18.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/COLISEU.jpg"
+                alt="TRIO COLISEU"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">HAMBURGUER</p>
+                <p class="font-bold">
+                  Batata frita pequena e Refrigerante de 200ml.
+                </p>
+                <p class="text-sm">
+                  Hambúrguer de carne, mussarela, presunto, calabresa, ovo,
+                  bacon, tomate, alface americana e maionese especial servido no
+                  pão brioche.
+                </p>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 20,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="HAMBURGUER"
+                    data-price="20.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/COLISEU LOTADO.jpg"
+                alt="TRIO COLISEU LOTADO!"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">HAMBURGUER</p>
+                <p class="font-bold">
+                  Batata frita pequena e Refrigerante de 200ml.
+                </p>
+                <p class="text-sm">
+                  Hambúrguer de carne, filé de frango, salsicha, presunto,
+                  calabresa, ovo, bacon, mussarela, tomate, alface americana e
+                  maionese especial servido no pão brioche.
+                </p>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 26,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="HAMBURGUER"
+                    data-price="26.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+          <!-- Fim Burger Tradicional -->
+        </main>
+      </div>
+      <br />
+      <!-- Fim Trio Burger Tradicional -->
+
+      <!-- Começo Burger de Frango -->
+      <div class="mx-auto max-w-7xl px-2 my-2">
+        <h2
+          id="burgerfrango"
+          class="text-2xl md:text-3xl font-bold text-center mt-9 mb-6"
+        >
+          Burger de Frango:
+        </h2>
+      </div>
+
+      <!-- INICIO DE MENU -->
+      <div id="menu">
+        <main
+          class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16"
+        >
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/BASSI CHICKEN.jpg"
+                alt="BASSI CHICKEN"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">HAMBURGUER</p>
+                <p class="text-sm">
+                  Filézão de frango empanado, alface americana e maionese
+                  especial, servido no pão brioche.
+                </p>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 14,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="HAMBURGUER"
+                    data-price="14.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/COLISEU - FILÉ DE FRANGO.jpg"
+                alt="COLISEU - FILÉ DE FRANGO"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">HAMBURGUER</p>
+                <p class="text-sm">
+                  Filé de frango grelhado, mussarela, presunto, calabresa, ovo,
+                  bacon, tomate, alface americana e maionese especial servido no
+                  pão brioche.
+                </p>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 16,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="HAMBURGUER"
+                    data-price="16.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/FIORI - FILÉ DE FRANGO.jpg"
+                alt="FIORI - FILÉ DE FRANGO"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">HAMBURGUER</p>
+                <p class="text-sm">
+                  Filé de frango grelhado, mussarela, presunto, tomate, alface
+                  americana e maionese especial.
+                </p>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 14,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="HAMBURGUER"
+                    data-price="14.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/RAVENA.jpg"
+                alt="RAVENA"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">HAMBURGUER</p>
+                <p class="text-sm">
+                  Filézão de frango empanado, cheddar, bacon, cebola grelhada,
+                  alface americana e maionese caseira, servido no pão brioche.
+                </p>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 19,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="HAMBURGUER"
+                    data-price="19.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+        </main>
+      </div>
+      <br />
+
+      <!-- Fim Burger de Frango -->
+
+      <!-- Começo Trio Burger de Frango -->
+      <div class="mx-auto max-w-7xl px-2 my-2">
+        <h2
+          id="trioburgerfrango"
+          class="text-2xl md:text-3xl font-bold text-center mt-9 mb-6"
+        >
+          Trio Burger de Frango:
+        </h2>
+      </div>
+
+      <!-- INICIO DE MENU -->
+      <div id="menu">
+        <main
+          class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16"
+        >
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/BASSI CHICKEN.jpg"
+                alt="TRIO BASSI CHICKEN"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">HAMBURGUER</p>
+                <p class="font-bold">
+                  Batata frita pequena e Refrigerante de 200ml.
+                </p>
+                <p class="text-sm">
+                  Filézão de frango empanado, alface americana e maionese
+                  especial, servido no pão brioche.
+                </p>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 21,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="HAMBURGUER"
+                    data-price="21.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/COLISEU - FILÉ DE FRANGO.jpg"
+                alt="TRIO COLISEU - FILÉ DE FRANGO"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">HAMBURGUER</p>
+                <p class="font-bold">
+                  Batata frita pequena e Refrigerante de 200ml.
+                </p>
+                <p class="text-sm">
+                  Filé de frango grelhado, mussarela, presunto, calabresa, ovo,
+                  bacon, tomate, alface americana e maionese especial servido no
+                  pão brioche.
+                </p>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 23,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="HAMBURGUER"
+                    data-price="23.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/FIORI - FILÉ DE FRANGO.jpg"
+                alt="TRIO FIORI - FILÉ DE FRANGO"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">HAMBURGUER</p>
+                <p class="font-bold">
+                  Batata frita pequena e Refrigerante de 200ml.
+                </p>
+                <p class="text-sm">
+                  Filé de frango grelhado, mussarela, presunto, tomate, alface
+                  americana e maionese especial.
+                </p>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 21,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="HAMBURGUER"
+                    data-price="21.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/RAVENA.jpg"
+                alt="TRIO RAVENA"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">HAMBURGUER</p>
+                <p class="font-bold">
+                  Batata frita pequena e Refrigerante de 200ml.
+                </p>
+                <p class="text-sm">
+                  Filézão de frango empanado, cheddar, bacon, cebola grelhada,
+                  alface americana e maionese caseira, servido no pão brioche.
+                </p>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 26,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="HAMBURGUER"
+                    data-price="26.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+        </main>
+      </div>
+      <br />
+      <!-- FIM Trio Burger de Frango -->
+
+      <!-- comceço crepe -->
+      <div class="mx-auto max-w-7xl px-2 my-2">
+        <h2
+          id="crepe"
+          class="text-2xl md:text-3xl font-bold text-center mt-9 mb-6"
+        >
+          Crepe:
+        </h2>
+      </div>
+
+      <!-- INICIO DE MENU -->
+      <div id="menu">
+        <main
+          class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16"
+        >
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/Crepe de carne de sol com bacon e catupiry.jpg"
+                alt="Crepe de carne de sol com bacon e catupiry"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">
+                  Crepe de carne de sol com bacon e catupiry
+                </p>
+                <p class="text-sm">
+                  Carne de sol desfiada, bacon, mussarela e catupiry.
+                </p>
+                <br />
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 29,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="Crepe de carne de sol com bacon e catupiry"
+                    data-price="29.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/Crepe de frango com bacon e catupiry.jpg"
+                alt="Crepe de frango com bacon e catupiry"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">Crepe de frango com bacon e catupiry</p>
+                <p class="text-sm">
+                  frango desfiado, bacon, mussarela, e catupiry
+                </p>
+                <br />
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 24,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="Crepe de frango com bacon e catupiry"
+                    data-price="24.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+        </main>
+      </div>
+      <br />
+      <!-- Fim crepe -->
+
+      <!-- Começo Hot Dog -->
+      <div class="mx-auto max-w-7xl px-2 my-2">
+        <h2
+          id="hotdog"
+          class="text-2xl md:text-3xl font-bold text-center mt-9 mb-6"
+        >
+          Hot Dog:
+        </h2>
+      </div>
+
+      <!-- INICIO DE MENU -->
+      <div id="menu">
+        <main
+          class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16"
+        >
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/BRASILIANO - SALSICHA.jpg"
+                alt="BRASILIANO - SALSICHA"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">Cachorro quente</p>
+                <p class="text-sm">
+                  Pão, salsicha, bacon, mussarela, presunto, milho, batata palha
+                  e maionese especial.
+                </p>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 11,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="Cachorro quente"
+                    data-price="11.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/BRASILIANO - FRANGO CATUPITY.jpg"
+                alt="BRASILIANO - FRANGO CATUPITY"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">Cachorro quente</p>
+                <p class="text-sm">
+                  Pão, peito de frango desfiado, bacon, mussarela, catupiry,
+                  milho e batata palha.
+                </p>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 14,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="Cachorro quente"
+                    data-price="14.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/BRASILIANO - FRANGO CHEDDAR.jpg"
+                alt="BRASILIANO -FRANGO CHEDDAR"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">Cachorro quente</p>
+                <p class="text-sm">
+                  Filé de frango grelhado, mussarela, presunto, tomate, alface
+                  americana e maionese especial.
+                </p>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 14,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="Cachorro quente"
+                    data-price="14.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/BRASILIANO - CALABRESA.jpg"
+                alt="BRASILIANO - CALABRESA"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">Cachorro quente</p>
+                <p class="text-sm">
+                  Filézão de frango empanado, cheddar, bacon, cebola grelhada,
+                  alface americana e maionese caseira, servido no pão brioche.
+                </p>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 11,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="Cachorro quente"
+                    data-price="11.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+        </main>
+      </div>
+      <br />
+      <!-- Fim Hot Dog -->
+
+      <!-- Começo Trio Hot Dog -->
+      <div class="mx-auto max-w-7xl px-2 my-2">
+        <h2
+          id="triohotdog"
+          class="text-2xl md:text-3xl font-bold text-center mt-9 mb-6"
+        >
+          Trio Hot Dog:
+        </h2>
+      </div>
+      <!-- INICIO DE MENU -->
+      <div id="menu">
+        <main
+          class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16"
+        >
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/BRASILIANO - SALSICHA.jpg"
+                alt="TRIO BRASILIANO - SALSICHA"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">Cachorro quente</p>
+                <p class="font-bold">
+                  Batata frita pequena e Refrigerante de 200ml.
+                </p>
+                <p class="text-sm">
+                  Pão, salsicha, bacon, mussarela, presunto, milho, batata palha
+                  e maionese especial.
+                </p>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 18,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="Cachorro quente"
+                    data-price="18.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/BRASILIANO - FRANGO CATUPITY.jpg"
+                alt="TRIO BRASILIANO - FRANGO CATUPITY"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">Cachorro quente</p>
+                <p class="font-bold">
+                  Batata frita pequena e Refrigerante de 200ml.
+                </p>
+                <p class="text-sm">
+                  Pão, peito de frango desfiado, bacon, mussarela, catupiry,
+                  milho e batata palha.
+                </p>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 20,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="Cachorro quente"
+                    data-price="20.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/TRIOBRASILIANO - FRANGO CHEDDAR.jpg"
+                alt="TRIO BRASILIANO - FRANGO CHEDDAR"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">Cachorro quente</p>
+                <p class="font-bold">
+                  Batata frita pequena e Refrigerante de 200ml.
+                </p>
+                <p class="text-sm">
+                  Pão, peito de frango desfiado, bacon, cheddar, mussarela,
+                  milho e batata palha.
+                </p>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 20,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="Cachorro quente"
+                    data-price="20.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/BRASILIANO - CALABRESA.jpg"
+                alt="TRIO BRASILIANO - CALABRESA"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">Cachorro quente</p>
+                <p class="font-bold">
+                  Batata frita pequena e Refrigerante de 200ml.
+                </p>
+                <p class="text-sm">
+                  Pão, calabresa, bacon, mussarela, presunto, milho, batata
+                  palha e maionese especial.
+                </p>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 18,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="Cachorro quente"
+                    data-price="18.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+        </main>
+      </div>
+      <br />
+      <!-- Fim Trio Hot Dog -->
+
+      <!-- Começo burger vegetariano -->
+      <div class="mx-auto max-w-7xl px-2 my-2">
+        <h2
+          id="vegetariano"
+          class="text-2xl md:text-3xl font-bold text-center mt-9 mb-6"
+        >
+          Burger vegetariano:
+        </h2>
+      </div>
+
+      <!-- INICIO DE MENU -->
+      <div id="menu">
+        <main
+          class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16"
+        >
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/TRIO VICENZA.jpg"
+                alt="TRIO VICENZA"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">HAMBURGUER</p>
+                <p class="font-bold">
+                  Batata frita pequena e Refrigerante de 200ml.
+                </p>
+                <p class="text-sm">
+                  Mussarela empanada, anéis de cebola, cebola caramelizada, ovo,
+                  picles, alface americana, tomate e maionese especial.
+                </p>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 29,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="HAMBURGUER"
+                    data-price="29.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/TRIO VICENZA.jpg"
+                alt="VICENZA"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">HAMBURGUER</p>
+                <p class="text-sm">
+                  Mussarela empanada, anéis de cebola, cebola caramelizada, ovo,
+                  picles, alface americana, tomate e maionese especial.
+                </p>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 22,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="HAMBURGUER"
+                    data-price="22.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+        </main>
+      </div>
+      <br />
+      <!-- Fim burger vegetariano -->
+
+      <!-- Começo Porção de batata -->
+      <div class="mx-auto max-w-7xl px-2 my-2">
+        <h2
+          id="batata"
+          class="text-2xl md:text-3xl font-bold text-center mt-9 mb-6"
+        >
+          Porção de batata:
+        </h2>
+      </div>
+
+      <!-- INICIO DE MENU -->
+      <div id="menu">
+        <main
+          class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16"
+        >
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/BATATA FRITA - MÉDIA.jpg"
+                alt="BATATA FRITA - MÉDIA"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">BATATA FRITA - MÉDIA</p>
+                <p class="text-sm">
+                  Porção média de batatas fritas. Acompanha sachê de molho verde
+                  e de alho
+                </p>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 21,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="BATATA FRITA - MÉDIA"
+                    data-price="21.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/BATATA FRITA COM QUEIJO - MÉDIA.jpg"
+                alt="BATATA FRITA COM QUEIJO - MÉDIA"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">BATATA FRITA COM QUEIJO - MÉDIA</p>
+                <p class="text-sm">
+                  Porção média de batatas fritas com queijo (Escolha entre:
+                  Mussarela ou Creme de cheddar). Acompanha sachês de molho
+                  verde e de alho..
+                </p>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 16,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="BATATA FRITA COM QUEIJO - MÉDIA"
+                    data-price="16.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/BATATA FRITA COM BACON E QUEIJO - MÉDIA.jpg"
+                alt="BATATA FRITA COM BACON E QUEIJO - MÉDIA"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">BATATA FRITA COM BACON E QUEIJO - MÉDIA</p>
+                <p class="text-sm">
+                  Porção média de batatas fritas com bacon e queijo (Escolha
+                  entre: Mussarela ou Creme de cheddar). Acompanha sachês de
+                  molho verde e de alho.
+                </p>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 19,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="BATATA FRITA COM BACON E QUEIJO - MÉDIA"
+                    data-price="19.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/BATATA FRITA - GRANDE.jpg"
+                alt="BATATA FRITA - GRANDE"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">BATATA FRITA - GRANDE</p>
+                <p class="text-sm">
+                  Porção média de batatas fritas. Acompanha sachê de molho verde
+                  e de alho.
+                </p>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 17,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="BATATA FRITA - GRANDE"
+                    data-price="17.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/BATATA FRITA COM BACON E QUEIJO - MÉDIA.jpg"
+                alt="BATATA FRITA COM BACON E QUEIJO - GRANDE"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">
+                  BATATA FRITA COM BACON E QUEIJO - GRANDE
+                </p>
+                <p class="text-sm">
+                  Porção grande de batatas fritas com bacon e queijo (Escolha
+                  entre: Mussarela ou Creme de cheddar). Acompanha sachês de
+                  molho verde e de alho.
+                </p>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 27,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="BATATA FRITA COM BACON E QUEIJO - GRANDE"
+                    data-price="27.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/BATATA FRITA COM QUEIJO - MÉDIA.jpg"
+                alt="BATATA FRITA COM QUEIJO - GRANDE"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">BATATA FRITA COM QUEIJO - GRANDE</p>
+                <p class="text-sm">
+                  Porção grande de batatas fritas com queijo (Escolha entre:
+                  Mussarela ou Creme de cheddar). Acompanha sachês de molho
+                  verde e de alho.
+                </p>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 26,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="BATATA FRITA COM QUEIJO - GRANDE"
+                    data-price="26.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+
+          <!-- PRODUTO ITEM -->
+          <div class="border p-4 rounded-md shadow-md">
+            <div class="flex gap-7">
+              <img
+                src="./assets/BATATA RÚSTICA.jpg"
+                alt="BATATA RÚSTICA"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+              />
+              <div>
+                <p class="font-bold">BATATA RÚSTICA</p>
+                <p class="text-sm">
+                  Porção de batata rústica com tempero caseiro levemente
+                  apimentado.
+                </p>
+                <div class="flex items-center gap-2 justify-between mt-3">
+                  <p class="font-bold text-lg">R$ 26,90</p>
+                  <button
+                    class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                    data-name="BATATA RÚSTICA"
+                    data-price="26.90"
+                  >
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM PRODUTO ITEM -->
+        </main>
+      </div>
+      <br />
+      <!-- Fim Porção de batata -->
+
+      <!-- GRID BEBIDAS -->
+      <div class="mx-auto max-w-7xl px-2 my-2">
+        <h2
+          id="sucocreme"
+          class="text-2xl md:text-3xl font-bold text-center mt-9 mb-6"
+        >
+          Sucos e Cremes:
+        </h2>
+      </div>
+
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16"
+        id="drinks-menu"
+      >
+        <!-- SUCO ITEM -->
+        <div class="border p-4 rounded-md shadow-md">
+          <div class="flex gap-7 w-full">
+            <img
+              src="./assets/CREME.jpg"
+              class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+            />
+            <div class="w-full">
+              <p class="font-bold">CREME DE POLPA DE FRUTA: ESCOLHA O SABOR!</p>
+              <p class="text-sm">Polpa de fruta batida com leite. 400ml.</p>
+              <div class="flex items-center gap-2 justify-between mt-3">
+                <p class="font-bold text-lg">R$ 9,00</p>
+                <button
+                  class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                  data-name="CREME DE POLPA DE FRUTA: ESCOLHA O SABOR!"
+                  data-price="9.00"
+                >
+                  <i class="fa fa-cart-plus text-lg text-white"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- FIM SUCO ITEM -->
+
+        <!-- SUCO ITEM -->
+        <div class="border p-4 rounded-md shadow-md">
+          <div class="flex gap-7 w-full">
+            <img
+              src="./assets/SUCO DE POLPA DE FRUTA. ESCOLHA O SABOR!.jpg"
+              alt="SUCO DE POLPA DE FRUTA"
+              class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+            />
+            <div class="w-full">
+              <p class="font-bold">SUCO DE POLPA DE FRUTA: ESCOLHA O SABOR!</p>
+              <p class="text-sm">
+                Polpa de acerola batida com suco natural de laranja 400ml.
+              </p>
+              <div class="flex items-center gap-2 justify-between mt-3">
+                <p class="font-bold text-lg">R$ 8,00</p>
+                <button
+                  class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                  data-name="SUCO DE POLPA DE FRUTA: ESCOLHA O SABOR!"
+                  data-price="8.00"
+                >
+                  <i class="fa fa-cart-plus text-lg text-white"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- FIM SUCO ITEM -->
+        <div
+          id="flavor-modal"
+          class="bg-black/60 w-full h-full fixed top-0 left-0 z-[99] flex items-center justify-center hidden"
+        >
+          <div
+            class="bg-white p-5 rounded-md w-80 shadow-lg flex flex-col items-center"
+          >
+            <h2 class="text-center font-bold text-2xl mb-4">Escolha o Sabor</h2>
+            <div id="flavor-options" class="flex flex-col mb-4 w-full">
+              <button
+                class="flavor-btn bg-blue-500 text-black py-3 rounded mb-2 hover:bg-blue-600 transition duration-200 shadow-md"
+                data-flavor="Abacaxi"
+              >
+                Abacaxi
+              </button>
+              <button
+                class="flavor-btn bg-blue-500 text-black py-3 rounded mb-2 hover:bg-blue-600 transition duration-200 shadow-md"
+                data-flavor="Acerola"
+              >
+                Acerola
+              </button>
+              <button
+                class="flavor-btn bg-blue-500 text-black py-3 rounded mb-2 hover:bg-blue-600 transition duration-200 shadow-md"
+                data-flavor="Cupuaçu"
+              >
+                Cupuaçu
+              </button>
+              <button
+                class="flavor-btn bg-blue-500 text-black py-3 rounded mb-2 hover:bg-blue-600 transition duration-200 shadow-md"
+                data-flavor="Graviola"
+              >
+                Graviola
+              </button>
+              <button
+                class="flavor-btn bg-blue-500 text-black py-3 rounded mb-2 hover:bg-blue-600 transition duration-200 shadow-md"
+                data-flavor="Manga"
+              >
+                Manga
+              </button>
+              <button
+                class="flavor-btn bg-blue-500 text-black py-3 rounded mb-2 hover:bg-blue-600 transition duration-200 shadow-md"
+                data-flavor="Maracujá"
+              >
+                Maracujá (+ R$ 2,00)
+              </button>
+              <button
+                class="flavor-btn bg-blue-500 text-black py-3 rounded mb-2 hover:bg-blue-600 transition duration-200 shadow-md"
+                data-flavor="Morango"
+              >
+                Morango
+              </button>
+            </div>
+            <button
+              id="close-flavor-modal"
+              class="bg-red-500 text-black px-4 py-2 rounded w-full hover:bg-red-600 transition duration-200"
+            >
+              Fechar
+            </button>
+          </div>
+        </div>
+      </div>
+      <br />
+      <!-- Fim sucos e creme -->
+
+      <div class="mx-auto max-w-7xl px-2 my-2">
+        <h2
+          id="refri"
+          class="text-2xl md:text-3xl font-bold text-center mt-9 mb-6"
+        >
+          Refrigerante:
+        </h2>
+      </div>
+
+      <!-- GRID BEBIDAS -->
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16"
+        id="drinks-menu"
+      >
+        <!-- BEBIDA ITEM -->
+        <div class="border p-4 rounded-md shadow-md">
+          <div class="flex gap-7 w-full">
+            <img
+              src="./assets/refri-1.png"
+              alt="Coca Lata"
+              class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+            />
+            <div class="w-full">
+              <p class="font-bold">COCA-COLA LATA 310ML</p>
+              <p class="text-sm">Coca-cola lata 310m</p>
+              <div class="flex items-center gap-2 justify-between mt-3">
+                <p class="font-bold text-lg">R$ 5,00</p>
+                <button
+                  class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                  data-name="Coca Lata"
+                  data-price="5.00"
+                  style="touch-action: manipulation"
+                >
+                  <i class="fa fa-cart-plus text-lg text-white"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- FIM BEBIDA ITEM -->
+
+        <!-- BEBIDA ITEM -->
+        <div class="border p-4 rounded-md shadow-md">
+          <div class="flex gap-7 w-full">
+            <img
+              src="./assets/refri-2.png"
+              alt="Guaraná Lata"
+              class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+            />
+            <div class="w-full">
+              <p class="font-bold">GUARANÁ ANTÁRTICA LATA 310ML</p>
+              <div class="flex items-center gap-2 justify-between mt-3">
+                <p class="font-bold text-lg">R$ 5,00</p>
+                <button
+                  class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                  data-name="Guaraná Lata"
+                  data-price="5.00"
+                  style="touch-action: manipulation"
+                >
+                  <i class="fa fa-cart-plus text-lg text-white"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- FIM BEBIDA ITEM -->
+
+        <!-- BEBIDA ITEM -->
+        <div class="border p-4 rounded-md shadow-md">
+          <div class="flex gap-7 w-full">
+            <img
+              src="./assets/guarana.jpg"
+              alt="Guaraná 1,5L"
+              class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+            />
+            <div class="w-full">
+              <p class="font-bold">GUARANÁ ANTÁRTICA 1,5L</p>
+              <div class="flex items-center gap-2 justify-between mt-3">
+                <p class="font-bold text-lg">R$ 10,00</p>
+                <button
+                  class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                  data-name="Guaraná 1,5L"
+                  data-price="10.00"
+                  style="touch-action: manipulation"
+                >
+                  <i class="fa fa-cart-plus text-lg text-white"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- FIM BEBIDA ITEM -->
+
+        <!-- BEBIDA ITEM -->
+        <div class="border p-4 rounded-md shadow-md">
+          <div class="flex gap-7 w-full">
+            <img
+              src="./assets/coca zero.jpg"
+              alt="Coca-cola zero"
+              class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+            />
+            <div class="w-full">
+              <p class="font-bold">COCA-COLA LATA ZERO 310ml</p>
+              <div class="flex items-center gap-2 justify-between mt-3">
+                <p class="font-bold text-lg">R$ 5,00</p>
+                <button
+                  class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                  data-name="Coca-cola zero"
+                  data-price="5.00"
+                  style="touch-action: manipulation"
+                >
+                  <i class="fa fa-cart-plus text-lg text-white"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- FIM BEBIDA ITEM -->
+
+        <!-- BEBIDA ITEM -->
+        <div class="border p-4 rounded-md shadow-md">
+          <div class="flex gap-7 w-full">
+            <img
+              src="./assets/coca 2l.jpg"
+              alt="COCA-COLA 2L"
+              class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+            />
+            <div class="w-full">
+              <p class="font-bold">COCA-COLA 2L</p>
+              <div class="flex items-center gap-2 justify-between mt-3">
+                <p class="font-bold text-lg">R$ 12,00</p>
+                <button
+                  class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                  data-name="COCA-COLA 2L"
+                  data-price="12.00"
+                  style="touch-action: manipulation"
+                >
+                  <i class="fa fa-cart-plus text-lg text-white"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- FIM BEBIDA ITEM -->
+
+        <!-- BEBIDA ITEM -->
+        <div class="border p-4 rounded-md shadow-md">
+          <div class="flex gap-7 w-full">
+            <img
+              src="./assets/coca 600.jpg"
+              alt="REFRIGERANTE 600 ML"
+              class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+            />
+            <div class="w-full">
+              <p class="font-bold">REFRIGERANTE 600 ML</p>
+              <div class="flex items-center gap-2 justify-between mt-3">
+                <p class="font-bold text-lg">R$ 7,00</p>
+                <button
+                  class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                  data-name="REFRIGERANTE 600 ML"
+                  data-price="7.00"
+                  style="touch-action: manipulation"
+                >
+                  <i class="fa fa-cart-plus text-lg text-white"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- FIM BEBIDA ITEM -->
+      </div>
+      <!-- FIM GRID BEBIDAS -->
+    </div>
+    <!-- FIM DE MENU -->
+
+    <!-- Barra de menu -->
+    <div
+      class="fixed bottom-0 left-0 right-0 bg-gray-500 shadow-lg z-[45] py-2 hide-scrollbar scroll-container"
+    >
+      <div class="flex space-x-4 px-4">
+        <a
+          id="navegacao-artesanal"
+          href="#artensal"
+          class="text-sm w-34 h-34 rounded-full shadow-lg p-1 bg-gray-400"
+          >Burger Artesanal</a
+        >
+        <a
+          id="navegacao-trioartesanal"
+          href="#trioartesanal"
+          class="text-sm w-34 h-34 rounded-full shadow-lg p-1 bg-gray-400"
+          >Trio Artesanal</a
+        >
+        <a
+          id="navegacao-tradicional"
+          href="#tradicional"
+          class="text-sm w-34 h-34 rounded-full shadow-lg p-1 bg-gray-400"
+          >Burger Tradicional</a
+        >
+        <a
+          id="navegacao-triotradicional"
+          href="#triotradicional"
+          class="text-sm w-34 h-34 rounded-full shadow-lg p-1 bg-gray-400"
+          >Trio Burger Tradicional</a
+        >
+        <a
+          id="navegacao-burgerfrango"
+          href="#burgerfrango"
+          class="text-sm w-34 h-34 rounded-full shadow-lg p-1 bg-gray-400"
+          >Burger Frango</a
+        >
+        <a
+          id="navegacao-trioburgerfrango"
+          href="#trioburgerfrango"
+          class="text-sm w-34 h-34 rounded-full shadow-lg p-1 bg-gray-400"
+          >Trio Burger Frango</a
+        >
+        <a
+          id="navegacao-crepe"
+          href="#crepe"
+          class="text-sm w-34 h-34 rounded-full shadow-lg p-1 bg-gray-400"
+          >Crepe</a
+        >
+        <a
+          id="navegacao-hotdog"
+          href="#hotdog"
+          class="text-sm w-34 h-34 rounded-full shadow-lg p-1 bg-gray-400"
+          >Hot Dog</a
+        >
+        <a
+          id="navegacao-triohotdog"
+          href="#triohotdog"
+          class="text-sm w-34 h-34 rounded-full shadow-lg p-1 bg-gray-400"
+          >Trio Hot Dog</a
+        >
+        <a
+          id="navegacao-vegetariano"
+          href="#vegetariano"
+          class="text-sm w-34 h-34 rounded-full shadow-lg p-1 bg-gray-400"
+          >Burger Vegetariano</a
+        >
+        <a
+          id="navegacao-batata"
+          href="#batata"
+          class="text-sm w-34 h-34 rounded-full shadow-lg p-1 bg-gray-400"
+          >Porção de Batata</a
+        >
+        <a
+          id="navegacao-sucocreme"
+          href="#sucocreme"
+          class="text-sm w-34 h-34 rounded-full shadow-lg p-1 bg-gray-400"
+          >Suco e Creme</a
+        >
+        <a
+          id="navegacao-refri"
+          href="#refri"
+          class="text-sm w-34 h-34 rounded-full shadow-lg p-1 bg-gray-400"
+          >Refrigerante</a
+        >
+      </div>
+    </div>
+
+    <!-- MODAL CART -->
+    <div
+      class="bg-black/60 w-full h-full fixed top-0 left-0 z-[99] items-center justify-center hidden"
+      id="cart-modal"
+    >
+      <div
+        class="bg-white p-5 rounded-md max-w-[90%] md:max-w-[600px] max-h-[80%] overflow-auto"
+      >
+        <h2 class="text-center font-bold text-2xl mb-2">Meu carrinho</h2>
+        <div id="cart-items" class="flex justify-between mb-2 flex-col"></div>
+
+        <!-- Delivery Region Selection -->
+        <div class="my-2">
+          <label class="font-bold" for="delivery-region"
+            >Selecione a região de entrega:</label
+          >
+          <select
+            id="delivery-region"
+            class="border-2 p-1 rounded my-1 input-field"
+          >
+            <option value="">Selecione</option>
+            <option value="DVO">Brasília</option>
+            <option value="Grande Vale">Brasília</option>
+            <option value="Novo Gama">Brasília</option>
+            <option value="Pedregal-Parada-5">Brasília</option>
+            <option value="Pedregal-Parada-10-15">Brasília</option>
+            <option value="Pedregal-Parada-6-9">Brasília</option>
+            <option value="Santa-Maria-101-104">Brasília</option>
+            <option value="Santa-Maria-201-204">Brasília</option>
+            <option value="Santa-Maria-301-304">Brasília</option>
+            <option value="Santa-Maria-401-404">Brasília</option>
+            <option value="Santa-Maria-105-110">Brasília</option>
+            <option value="Santa-Maria-205-210">Brasília</option>
+            <option value="Santa-Maria-305-310">Brasília</option>
+            <option value="Santa-Maria-405-410">Brasília</option>
+          </select>
+          <p id="region-warn" class="text-red-500 hidden mt-1">
+            Por favor, selecione uma região de entrega!
+          </p>
+        </div>
+
+        <!-- Payment Method Selection -->
+        <div class="my-2">
+          <label class="font-bold" for="payment-method"
+            >Selecione o meio de pagamento:</label
+          >
+          <select
+            id="payment-method"
+            class="border-2 p-1 rounded my-1 input-field"
+          >
+            <option value="">Selecione</option>
+            <option value="cartão de débito">Cartão de Débito</option>
+            <option value="cartão de crédito">Cartão de Crédito</option>
+            <option value="pix">Pix</option>
+            <option value="Alelo">Alelo Refeição</option>
+            <option value="Sodexo">Sodexo Refeição</option>
+            <option value="dinheiro">Dinheiro</option>
+          </select>
+          <p id="payment-warn" class="text-red-500 hidden mt-1">
+            Por favor, selecione um meio de pagamento!
+          </p>
+        </div>
+
+        <!-- Change Request Section -->
+        <div id="change-request" class="my-2">
+          <label class="font-bold" for="change-amount">Precisa de troco?</label>
+          <input
+            type="text"
+            id="change-amount"
+            placeholder="Informe o valor..."
+            class="border-2 p-1 rounded my-1"
+            pattern="\d*"
+            Permite
+            apenas
+            números
+            --
+          />
+          <p id="change-warn" class="text-red-500 hidden mt-1">
+            Por favor, insira um valor válido para o troco!
+          </p>
+        </div>
+        <br />
+
+        <p class="font-bold">Endereço de entrega:</p>
+        <input
+          type="text"
+          placeholder="Digite o seu endereço completo..."
+          id="address"
+          class="w-full border-2 p-1 rounded my-1"
+        />
+        <p class="text-red-500 hidden" id="address-warn">
+          Digite o seu endereço completo!
+        </p>
+        <br /><br />
+
+        <!-- Campo de Observação -->
+        <div class="my-2">
+          <label class="font-bold" for="observation">Observações:</label>
+          <textarea
+            id="observation"
+            rows="2"
+            placeholder="Digite suas observações aqui..."
+            class="border-2 p-1 rounded my-1 w-full"
+          ></textarea>
+        </div>
+
+        <p class="font-bold">
+          Taxa de entrega: <span id="delivery-fee">0.00</span>
+        </p>
+        <p class="font-bold"><span id="cart-total">0.00</span></p>
+        <br />
+
+        <div class="flex items-center justify-between mt-5 w-full">
+          <button
+            class="bg-red-500 text-white px-4 py-1 rounded"
+            id="close-modal-btn"
+            style="touch-action: manipulation"
+          >
+            Fechar
+          </button>
+          <button
+            id="checkout-btn"
+            class="bg-green-500 text-white px-4 py-1 rounded"
+            style="touch-action: manipulation"
+          >
+            Finalizar pedido
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- FIM MODAL CART -->
+
+    <div style="padding-top: 60px">
+      <!-- Conteúdo da página -->
+    </div>
+
+    <!-- Modal para Adicionais -->
+    <div
+      id="add-ons-modal"
+      class="bg-black/60 w-full h-full fixed top-0 left-0 z-[99] flex items-center justify-center hidden"
+    >
+      <div
+        class="bg-white p-5 rounded-md w-full max-w-lg max-h-[80vh] overflow-hidden shadow-lg flex flex-col"
+      >
+        <h4 class="text-center font-bold text-2xl mb-4">
+          Deseja incluir algum adicional?
+        </h4>
+        <div
+          id="add-ons-options"
+          class="text-sm flex flex-col mb-4 w-full flex-grow overflow-y-auto"
+          style="max-height: 60vh"
+        >
+          <h3 class="font-bold mb-2">Adicionais:</h3>
+          <div class="flex flex-col space-y-2">
+            <!-- Adicionais -->
+            <button
+              class="add-on-btn border text-sm border-blue-500 bg-white text-black py-2 rounded shadow hover:bg-blue-500 hover:text-white transition duration-300"
+              data-name="com adicional de Fatias de Abacaxi"
+              data-price="3.00"
+            >
+              Fatias de Abacaxi + R$ 3,00
+            </button>
+            <button
+              class="add-on-btn border text-sm border-blue-500 bg-white text-black py-2 rounded shadow hover:bg-blue-500 hover:text-white transition duration-300"
+              data-name="com adicional de Anéis de Cebola"
+              data-price="4.00"
+            >
+              Anéis de Cebola + R$ 4,00
+            </button>
+            <button
+              class="add-on-btn border text-sm border-blue-500 bg-white text-black py-2 rounded shadow hover:bg-blue-500 hover:text-white transition duration-300"
+              data-name="com adicional de Bacon"
+              data-price="4.00"
+            >
+              Bacon + R$ 4,00
+            </button>
+            <button
+              class="add-on-btn border text-sm border-blue-500 bg-white text-black py-2 rounded shadow hover:bg-blue-500 hover:text-white transition duration-300"
+              data-name="com adicional de Cebola Caramelizada"
+              data-price="4.00"
+            >
+              Cebola Caramelizada + R$ 4,00
+            </button>
+            <button
+              class="add-on-btn border text-sm border-blue-500 bg-white text-black py-2 rounded shadow hover:bg-blue-500 hover:text-white transition duration-300"
+              data-name="com adicional de Cebola Crispy"
+              data-price="4.00"
+            >
+              Cebola Crispy + R$ 4,00
+            </button>
+            <button
+              class="add-on-btn border text-sm border-blue-500 bg-white text-black py-2 rounded shadow hover:bg-blue-500 hover:text-white transition duration-300"
+              data-name="com adicional de Ovo"
+              data-price="4.00"
+            >
+              Ovo + R$ 4,00
+            </button>
+            <button
+              class="add-on-btn border text-sm border-blue-500 bg-white text-black py-2 rounded shadow hover:bg-blue-500 hover:text-white transition duration-300"
+              data-name="com adicional de Picles"
+              data-price="3.00"
+            >
+              Picles + R$ 3,00
+            </button>
+            <button
+              class="add-on-btn border text-sm border-blue-500 bg-white text-black py-2 rounded shadow hover:bg-blue-500 hover:text-white transition duration-300"
+              data-name="com adicional de Queijo Cheddar"
+              data-price="4.00"
+            >
+              Queijo Cheddar + R$ 4,00
+            </button>
+            <button
+              class="add-on-btn border text-sm border-blue-500 bg-white text-black py-2 rounded shadow hover:bg-blue-500 hover:text-white transition duration-300"
+              data-name="com adicional de Queijo Mussarela Empanado"
+              data-price="10.00"
+            >
+              Queijo Mussarela Empanado + R$ 10,00
+            </button>
+            <h3 class="font-bold mb-2">Molhos Extras:</h3>
+            <button
+              class="add-on-btn border text-sm border-blue-500 bg-white text-black py-2 rounded shadow hover:bg-blue-500 hover:text-white transition duration-300"
+              data-name="com adicional de Maionese Defumada"
+              data-price="3.00"
+            >
+              Pote de Maionese Defumada + R$ 3,00
+            </button>
+            <button
+              class="add-on-btn border text-sm border-blue-500 bg-white text-black py-2 rounded shadow hover:bg-blue-500 hover:text-white transition duration-300"
+              data-name="com adicional de Maionese de Alho"
+              data-price="1.00"
+            >
+              Sachê de Maionese de Alho + R$ 1,00
+            </button>
+            <button
+              class="add-on-btn border text-sm border-blue-500 bg-white text-black py-2 rounded shadow hover:bg-blue-500 hover:text-white transition duration-300"
+              data-name="com adicional de Maionese Verde"
+              data-price="1.00"
+            >
+              Sachê de Maionese Verde + R$ 1,00
+            </button>
+          </div>
+        </div>
+        <!-- Botão SEM ADICIONAIS -->
+        <button
+          id="confirm-add-ons-btn"
+          class="bg-green-500 font-bold text-white px-4 py-2 rounded w-full mb-2"
+        >
+          CONFIRMAR PEDIDO
+        </button>
+        <!-- Botão Fechar -->
+        <button
+          id="close-add-ons-modal"
+          class="bg-red-500 border font-bold text-sm text-white px-4 py-2 rounded w-full"
+        >
+          FECHAR
+        </button>
+      </div>
+    </div>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+
+  <!-- Tela de finalização de pedido e Redirecionando para o WhatsApp -->
+  <div
+    id="thank-you-modal"
+    class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden"
+  >
+    <div class="bg-white p-5 rounded-md max-w-sm text-center">
+      <h2 class="text-xl font-bold mb-2">Obrigado pela sua preferência!</h2>
+      <br />
+      <p class="mb-4">
+        Você será direcionado para o WhatsApp com os detalhes do seu pedido.
+      </p>
+      <br />
+      <p id="countdown">Redirecionando em 4 segundos...</p>
+    </div>
+  </div>
+</html>
