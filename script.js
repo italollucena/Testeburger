@@ -45,26 +45,34 @@ const deliveryFees = {
 };
 
 // List of items that can have add-ons
+// List of items that can have add-ons
 const allowedItems = [
-  "POTENZA",
-  "MILANO",
-  "NÁPOLES",
-  "BAMBINO",
-  "FLORENÇA",
-  "ITALY CHEESE",
-  "VENEZA",
-  "RAVENA",
-  "TRIO COLISEU - FILÉ DE FRANGO",
-  "TRIO ITALY CHEESE",
-  "TRIO POTENZA",
-  "TRIO MILANO",
-  "TRIO NÁPOLES",
-  "TRIO FLORENÇA",
-  "TRIO BAMBINO",
-  "TRIO VENEZA",
-  "TRIO RAVENA",
-  "HAMBURGUER",
-  "Cachorro quente",
+  "HAMBURGUER 1",
+  "HAMBURGUER 2",
+  "HAMBURGUER 3",
+  "HAMBURGUER 4",
+  "HAMBURGUER 5",
+  "HAMBURGUER 6",
+  "HAMBURGUER 7",
+  "HAMBURGUER 8",
+  "HAMBURGUER 9",
+  "HAMBURGUER 10",
+  "TRIO HAMBURGUER 1",
+  "TRIO HAMBURGUER 2",
+  "TRIO HAMBURGUER 3",
+  "TRIO HAMBURGUER 4",
+  "TRIO HAMBURGUER 5",
+  "TRIO HAMBURGUER 6",
+  "TRIO HAMBURGUER 7",
+  "TRIO HAMBURGUER 8",
+  "TRIO HAMBURGUER 9",
+  "TRIO HAMBURGUER 10",
+  "HAMBURGUER TRADICIONAL 1",
+  "HAMBURGUER TRADICIONAL 2",
+  "HAMBURGUER TRADICIONAL 3",
+  "TRIO HAMBURGUER TRADICIONAL 1",
+  "TRIO HAMBURGUER TRADICIONAL 2",
+  "TRIO HAMBURGUER TRADICIONAL 3",
   "CREME DE POLPA DE FRUTA: ESCOLHA O SABOR!",
   "SUCO DE POLPA DE FRUTA: ESCOLHA O SABOR!",
 ];
@@ -557,18 +565,3 @@ document.addEventListener(
 document.querySelectorAll("button").forEach((button) => {
   button.style.touchAction = "manipulation"; // Prevents double-tap zoom
 });
-// Seleciona todas as imagens e textos que você deseja embaçar e ocultar
-const images = document.querySelectorAll("img");
-
-// Aplica a classe 'blur' a todas as imagens
-images.forEach((img) => {
-  img.classList.add("blur");
-});
-
-// Aplica a classe 'hidden' a todos os textos
-texts.forEach((text) => {
-  text.classList.add("hidden");
-});
-
-// Se você quiser aplicar a classe 'hidden' apenas a textos específicos,
-// você pode adicionar condições aqui, por exemplo, com base em atributos ou classes.
